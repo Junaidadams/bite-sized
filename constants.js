@@ -1,10 +1,22 @@
+import {
+  BsFacebook,
+  BsLinkedin,
+  BsInstagram,
+  BsTwitterX,
+} from "react-icons/bs";
+
 export const websiteInformation = [
   {
     name: "website",
     copywright: "Blah blah blah, copyright blah blah.",
     year: 2024,
     developer: "Junaid Adams",
-    socials: [{ key: 1, name: "Linked In", link: "/", logo: "" }],
+    socials: [
+      { key: 1, name: "Linked In", link: "/", logo: BsLinkedin },
+      { key: 2, name: "Facebook", link: "/", logo: BsFacebook },
+      { key: 3, name: "Instagram", link: "/", logo: BsInstagram },
+      { key: 4, name: "Twitter", link: "/", logo: BsTwitterX },
+    ],
   },
 ];
 
