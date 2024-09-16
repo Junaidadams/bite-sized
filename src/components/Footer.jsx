@@ -1,7 +1,9 @@
 import { navigationLinks, websiteInformation } from "../../constants";
 
+// Destructure the first item from websiteInformation
+const { socials } = websiteInformation[0];
+
 const Footer = () => {
-  const socials = websiteInformation.socials;
   return (
     <div>
       <ul>
@@ -12,11 +14,11 @@ const Footer = () => {
         ))}
       </ul>
       <ul>
-        {socials.map(({ social, logo: Logo }) => (
-          <li key={social.key}>
-            <a href={social.link}>
+        {socials.map(({ key, name, link, logo: Logo }) => (
+          <li key={key}>
+            <a href={link} className="flex space-x-2 ">
               <Logo />
-              {social.name}
+              <p>{name}</p>
             </a>
           </li>
         ))}
