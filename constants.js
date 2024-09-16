@@ -1,3 +1,13 @@
+export const websiteInformation = [
+  {
+    name: "website",
+    copywright: "Blah blah blah, copyright blah blah.",
+    year: 2024,
+    developer: "Junaid Adams",
+    socials: [{ key: 1, name: "Linked In", link: "/", logo: "" }],
+  },
+];
+
 export const navigationLinks = [
   {
     key: 1,
