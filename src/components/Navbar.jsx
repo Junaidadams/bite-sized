@@ -28,18 +28,18 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="z-20 flex justify-between items-center min-w-screen sticky top-0 min-h-[56px] bg-mainWhite">
+    <div className="z-20 flex justify-between items-center min-w-screen sticky top-0 min-h-[56px]">
       {/* Navigation Links */}
       <div className="md:hidden ml-2">
         <Toggle isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} />
       </div>
 
-      <ul className="space-x-8 capitalize pl-8 rounded-bl-full md:flex hidden flex-row ml-auto text-mainBlack bg-mainBlue pb-6 pt-4">
+      <ul className="space-x-8 capitalize pl-8 rounded-bl-full md:flex hidden flex-row ml-auto text-mainWhite bg-mainBlack pb-4 pt-4">
         {navigationLinks.map((link) => (
           <li key={link.key} className="">
             <a
               href={link.link}
-              className="text-space-cadet py-2 px-3 rounded-full hover:text-prussianBlue font-semibold"
+              className="text-space-cadet py-2 px-1 rounded-full hover:text-gray-300"
             >
               {link.name}
             </a>

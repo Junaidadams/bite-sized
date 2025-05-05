@@ -5,7 +5,7 @@ const { socials } = websiteInformation[0];
 
 const Footer = () => {
   return (
-    <div className="bg-mainBlack text-mainBlue capitalize flex flex-col">
+    <div className="bg-mainBlack text-mainWhite capitalize flex flex-col">
       <div className="flex flex-col lg:flex-row my-16 mx-auto  space-y-6 lg:space-x-12 lg:space-y-0">
         <div className="flex space-x-4">
           <ul className="">
