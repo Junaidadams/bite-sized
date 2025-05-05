@@ -5,7 +5,7 @@ const { socials } = websiteInformation[0];
 
 const Footer = () => {
   return (
-    <div>
+    <div className="bg-mainWhite capitalize">
       <ul>
         {navigationLinks.map((link) => (
           <li key={link.key}>
