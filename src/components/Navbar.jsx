@@ -34,7 +34,7 @@ const Navbar = () => {
         <Toggle isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} />
       </div>
 
-      <ul className="space-x-8 capitalize pl-8 rounded-bl-full md:flex hidden flex-row ml-auto text-mainWhite bg-mainBlack pb-4 pt-4">
+      <ul className="space-x-8 capitalize pl-8 rounded-bl md:flex hidden flex-row ml-auto text-mainWhite backdrop-blur-xl bg-black bg-opacity-70 pb-4 pt-4">
         {navigationLinks.map((link) => (
           <li key={link.key} className="">
             <a
@@ -45,83 +45,7 @@ const Navbar = () => {
             </a>
           </li>
         ))}
-        {/* {!currentUser ? (
-          <li>
-            {" "}
-            <a
-              href="/login"
-              className="text-space-cadet  py-2 px-3 rounded-full hover:text-indigo-600 font-semibold"
-            >
-              Login
-            </a>
-          </li>
-        ) : (
-          ""
-        )}
-        {!currentUser ? (
-          <li>
-            {" "}
-            <a
-              href="/register"
-              className="text-space-cadet  py-2 px-3 rounded-full hover:text-indigo-600 font-semibold"
-            >
-              Register
-            </a>
-          </li>
-        ) : (
-          ""
-        )} */}
       </ul>
-      {/* Signed in menu desktop */}
-      {/* {currentUser ? (
-        <div className="z-20 hidden md:flex fixed flex-col mt-2">
-          <button
-            onClick={() => setMiniMenuIsOpen(!miniMenuIsOpen)}
-            className="shadow-lg bg-space-cadet py-2 px-3 rounded-full flex"
-          >
-            <div className="my-auto mr-2">
-              <BsChevronDoubleDown color="#e4d9ff" />
-            </div>
-            <span className="text-periwinkle">Hi, {currentUser.username}</span>
-          </button>
-          <AnimatePresence>
-            {miniMenuIsOpen && (
-              <motion.div
-                initial="closed"
-                animate="open"
-                exit="closed"
-                variants={variants}
-                transition={{ duration: 0.5 }}
-                className="absolute  bg-space-cadet shadow-lg rounded-t-3xl rounded-b-md flex-col flex"
-              >
-                <button
-                  onClick={() => setMiniMenuIsOpen(!miniMenuIsOpen)}
-                  className="py-2 px-3 rounded-full flex"
-                >
-                  <div className="my-auto mr-2">
-                    <BsChevronDoubleUp color="#e4d9ff" />
-                  </div>
-                  <span className="text-periwinkle">
-                    Hi, {currentUser.username}
-                  </span>
-                </button>
-                {signedInNavLinks.map((link) => (
-                  <a
-                    key={link.key}
-                    href={link.link}
-                    className="px-4 py-2 hover:bg-delft-blue capitalize text-ghost-white"
-                  >
-                    {link.name}
-                  </a>
-                ))}
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-      ) : (
-        ""
-      )} */}
-      {/* Toggle Button */}
 
       {/* Mobile Menu */}
       <AnimatePresence>
@@ -147,29 +71,6 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
-            {/* {currentUser ? (
-              <a
-                href="/profile-page"
-                className="text-ghost-white hover:text-periwinkle m-auto "
-              >
-                Profile
-              </a>
-            ) : (
-              <div className="m-auto flex space-y-6 flex-col">
-                <a
-                  href="/login"
-                  className="text-ghost-white hover:text-periwinkle m-auto "
-                >
-                  Login
-                </a>
-                <a
-                  href="/register"
-                  className="text-ghost-white hover:text-periwinkle m-auto "
-                >
-                  Register
-                </a>
-              </div>
-            )} */}
           </motion.div>
         )}
       </AnimatePresence>

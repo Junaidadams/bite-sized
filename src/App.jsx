@@ -8,6 +8,7 @@ import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 
 import NoPage from "./pages/NoPage";
+import Products from "./pages/Products";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/services" element={<Services />} />
+      <Route path="/products" element={<Products />} />
       <Route path="*" element={<NoPage />} />
     </Routes>
   );
