@@ -1,8 +1,12 @@
 // Navbar.jsx
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { navigationLinks } from "../../constants";
 import Toggle from "./Toggle";
+import { CiShoppingCart } from "react-icons/ci";
+
+import { CartContext } from "../context/CartContext";
+import { Link } from "react-router-dom";
 
 const variants = {
   open: (height = 1000) => ({
@@ -26,7 +30,7 @@ const variants = {
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const { cart } = useContext(CartContext);
   return (
     <div className="z-20 flex justify-between items-center min-w-screen sticky top-0 min-h-[56px]">
       {/* Navigation Links */}
@@ -34,7 +38,7 @@ const Navbar = () => {
         <Toggle isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} />
       </div>
 
-      <ul className="space-x-8 capitalize pl-8 rounded-bl md:flex hidden flex-row ml-auto text-mainWhite backdrop-blur-xl bg-black bg-opacity-70 pb-4 pt-4">
+      <ul className="space-x-8 capitalize pl-8 rounded-bl md:flex hidden flex-row ml-auto text-mainWhite backdrop-blur bg-mainBlack bg-opacity-90 pb-4 pt-4">
         {navigationLinks.map((link) => (
           <li key={link.key} className="">
             <a
@@ -45,6 +49,14 @@ const Navbar = () => {
             </a>
           </li>
         ))}
+        {cart.length > 0 ? (
+          <Link to={"/request-order"} className="flex my-auto">
+            <p>{cart.length}</p>
+            <CiShoppingCart size={25} />
+          </Link>
+        ) : (
+          ""
+        )}
       </ul>
 
       {/* Mobile Menu */}

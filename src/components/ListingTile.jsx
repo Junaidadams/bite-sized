@@ -22,15 +22,15 @@ const ListingTile = ({ data }) => {
   };
 
   return (
-    <div className="w-full bg-mainOrange rounded-lg p-2 m-auto">
+    <div className="w-full rounded-xl shadow-2xl m-auto">
       <div className="relative">
         <img
           src={data.img}
           alt={data.name}
-          className="w-full h-40 object-cover rounded-t-sm"
+          className="w-full h-40 object-cover rounded-t-xl"
         />
       </div>
-      <div className="bg-white p-2 rounded-b-lg">
+      <div className="bg-white p-4 rounded-b-lg">
         <h3 className="font-bold text-lg">{data.name}</h3>
         <p className="text-gray-700">Price: R{data.pricing}</p>
 
@@ -68,7 +68,7 @@ const ListingTile = ({ data }) => {
 
         <button
           onClick={handleAddToCart}
-          className="bg-blue-500 text-white px-3 py-1 rounded mt-2 hover:bg-blue-600"
+          className="bg-mainOrange text-white px-3 py-1 rounded mt-2 hover:bg-opacity-90"
         >
           Add to Cart
         </button>
