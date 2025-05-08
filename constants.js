@@ -61,18 +61,15 @@ export const navigationLinks = [
     name: "about",
     link: "/about",
   },
+
   {
     key: 3,
-    name: "services",
-    link: "/services",
+    name: "products",
+    link: "/products",
   },
+
   {
     key: 4,
-    name: "FAQ",
-    link: "/faq",
-  },
-  {
-    key: 5,
     name: "contact",
     link: "/contact",
   },

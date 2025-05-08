@@ -7,10 +7,14 @@ import { BrowserRouter } from "react-router-dom";
 import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
 
+import { CartProvider } from "./context/CartContext.jsx";
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
-    <Navbar />
-    <App />
-    <Footer />
+    <CartProvider>
+      <Navbar />
+      <App />
+      <Footer />
+    </CartProvider>
   </BrowserRouter>
 );
