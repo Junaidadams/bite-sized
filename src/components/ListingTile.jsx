@@ -22,53 +22,67 @@ const ListingTile = ({ data }) => {
   };
 
   return (
-    <div className="w-full rounded-xl shadow-2xl m-auto">
-      <div className="relative">
+    <div className="w-full flex flex-col rounded-xl bg-white shadow-lg m-auto">
+      <div className="relative h-40">
         <img
           src={data.img}
           alt={data.name}
-          className="w-full h-40 object-cover rounded-t-xl"
+          className="w-full h-full object-cover rounded-t-xl"
         />
       </div>
-      <div className="bg-white p-4 rounded-b-lg">
-        <h3 className="font-bold text-lg">{data.name}</h3>
-        <p className="text-gray-700">Price: R{data.pricing}</p>
+      <div className="flex flex-col justify-between p-4 sm:p-6 ">
+        <div>
+          <h3 className="font-bold text-lg">{data.name}</h3>
+          <p className="text-gray-700">Price: R{data.pricing}</p>
 
-        <div className="my-2">
-          <label className="block text-sm">Quantity:</label>
-          <select
-            value={selectedQuantity}
-            onChange={(e) => setSelectedQuantity(Number(e.target.value))}
-            className="w-full p-1 rounded"
-          >
-            {data.quantities.map((qty) => (
-              <option key={qty} value={qty}>
-                {qty}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        {data.flavours && (
           <div className="my-2">
-            <label className="block text-sm">Flavour:</label>
+            <label className="block text-sm">Quantity:</label>
             <select
-              value={selectedFlavour}
-              onChange={(e) => setSelectedFlavour(e.target.value)}
-              className="w-full p-1 rounded"
+              value={selectedQuantity}
+              onChange={(e) => setSelectedQuantity(Number(e.target.value))}
+              className="w-full p-1 rounded border border-gray-300"
             >
-              {data.flavours.map((flavour) => (
-                <option key={flavour} value={flavour}>
-                  {flavour}
+              {data.quantities.map((qty) => (
+                <option key={qty} value={qty}>
+                  {qty}
                 </option>
               ))}
             </select>
           </div>
-        )}
+
+          {data.flavours ? (
+            <div className="my-2">
+              <label className="block text-sm">Flavour:</label>
+              <select
+                value={selectedFlavour}
+                onChange={(e) => setSelectedFlavour(e.target.value)}
+                className="w-full p-1 rounded border border-gray-300"
+              >
+                {data.flavours.map((flavour) => (
+                  <option key={flavour} value={flavour}>
+                    {flavour}
+                  </option>
+                ))}
+              </select>
+            </div>
+          ) : (
+            <div className="my-2">
+              <label className="block text-sm">Flavour:</label>
+              <select
+                disabled={true}
+                value=""
+                onChange={(e) => setSelectedFlavour(e.target.value)}
+                className="w-full p-1 rounded border border-gray-300"
+              >
+                <option value="not available">N/A </option>
+              </select>
+            </div>
+          )}
+        </div>
 
         <button
           onClick={handleAddToCart}
-          className="bg-mainOrange text-white px-3 py-1 rounded mt-2 hover:bg-opacity-90"
+          className="bg-mainOrange text-white px-3 py-2 rounded mt-2 hover:bg-opacity-90"
         >
           Add to Cart
         </button>
