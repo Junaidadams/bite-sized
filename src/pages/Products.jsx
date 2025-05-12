@@ -17,7 +17,7 @@ const Products = () => {
               <ListingTile key={data.key} data={data} />
             ))}
           </div>
-          <div className="bg-mainBlack text-white rounded-sm p-4 mt-8 ">
+          <div className="bg-mainGray text-white rounded-sm p-4 mt-8 ">
             <h1 className=" font-bold text-xl border-b pb-1">Cart Summary</h1>
             <ul className="text my-3">
               {cart.map((item, index) => (

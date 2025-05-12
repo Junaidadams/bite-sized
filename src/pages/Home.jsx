@@ -5,7 +5,7 @@ const Home = () => {
         {" "}
         {/* relative for positioning text */}
         <img
-          src="/pizza2.jpg"
+          src="/pizza3.jpg"
           className="w-full h-full object-cover filter: brightness-75"
           alt="Delicious pizza"
         />
