@@ -1,3 +1,4 @@
+import { array } from "prop-types";
 import { createContext, useState, useEffect } from "react";
 
 export const CartContext = createContext();
@@ -18,8 +19,16 @@ export const CartProvider = ({ children }) => {
 
   const clearCart = () => setCart([]);
 
+  const removeFromCart = (item) => {
+    setCart((prevCart) =>
+      prevCart.filter((cartItem) => cartItem.key !== item.key)
+    );
+  };
+
   return (
-    <CartContext.Provider value={{ cart, addToCart, clearCart }}>
+    <CartContext.Provider
+      value={{ cart, addToCart, clearCart, removeFromCart }}
+    >
       {children}
     </CartContext.Provider>
   );

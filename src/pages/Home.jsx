@@ -10,7 +10,7 @@ const Home = () => {
           alt="Delicious pizza"
         />
         <div className="absolute inset-6 flex items-center justify-center">
-          <h1 className="text-white text-4xl font-serif font-black drop-shadow-lg">
+          <h1 className="text-white text-4xl font-serif font-black drop-shadow-lg backdrop-blur-sm p-2">
             Bite sized lunchbox solutions
           </h1>
         </div>

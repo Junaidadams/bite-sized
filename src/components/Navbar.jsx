@@ -38,7 +38,7 @@ const Navbar = () => {
         <Toggle isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} />
       </div>
 
-      <ul className="space-x-8 capitalize px-8 rounded-bl md:flex hidden flex-row ml-auto text-mainWhite backdrop-blur bg-mainBlack bg-opacity-90 pb-4 pt-4">
+      <ul className="space-x-8 capitalize px-8 rounded-bl md:flex hidden flex-row ml-auto mb-auto text-mainWhite backdrop-blur bg-mainBlack bg-opacity-90 pb-3 pt-3">
         {navigationLinks.map((link) => (
           <li key={link.key} className="">
             <a

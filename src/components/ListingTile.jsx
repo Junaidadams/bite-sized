@@ -1,6 +1,8 @@
 import PropTypes from "prop-types";
 import { useContext, useState } from "react";
 import { CartContext } from "../context/CartContext";
+import { BsCartPlus } from "react-icons/bs";
+import { img } from "framer-motion/client";
 
 const ListingTile = ({ data }) => {
   const { addToCart } = useContext(CartContext);
@@ -12,17 +14,17 @@ const ListingTile = ({ data }) => {
   const handleAddToCart = () => {
     const cartItem = {
       key: data.key,
+      img: data.img,
       name: data.name,
       price: data.pricing,
       quantity: selectedQuantity,
       flavour: selectedFlavour,
     };
     addToCart(cartItem);
-    alert(`${data.name} added to cart`);
   };
 
   return (
-    <div className="w-full flex flex-col rounded-xl bg-white shadow-lg m-auto">
+    <div className="w-full flex flex-col rounded-t-xl rounded-b-sm bg-white shadow-lg m-auto">
       <div className="relative h-40">
         <img
           src={data.img}
@@ -32,7 +34,7 @@ const ListingTile = ({ data }) => {
       </div>
       <div className="flex flex-col justify-between p-4 sm:p-6 ">
         <div>
-          <h3 className="font-bold text-lg">{data.name}</h3>
+          <h3 className="font-bold tracking-wide text-xl">{data.name}</h3>
           <p className="text-gray-700">Price: R{data.pricing}</p>
 
           <div className="my-2">
@@ -82,9 +84,9 @@ const ListingTile = ({ data }) => {
 
         <button
           onClick={handleAddToCart}
-          className="bg-mainOrange text-white px-3 py-2 rounded mt-2 hover:bg-opacity-90"
+          className="bg-mainOrange text-white px-3 py-2 rounded mt-2 hover:bg-opacity-90 flex"
         >
-          Add to Cart
+          <span>Add to Cart</span> <BsCartPlus className="my-auto mx-2" />
         </button>
       </div>
     </div>
