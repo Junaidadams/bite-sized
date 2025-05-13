@@ -5,9 +5,9 @@ const Contact = () => {
     <div className="min-h-screen -mt-[56px] flex flex-col bg-mainBlue">
       <div className="mx-auto my-20 min-h-screen w-[95%]">
         <div className=" mx-auto md:my-10 lg:my-14 xl:my-20 sm:w-3/4 xl:w-2/3 bg-mainWhite p-3 sm:p-4 md:p-5 shadow-xl">
-          <form className="bg-white shadow-lg w-full space-y-6 rounded-xl">
-            <HeaderDiv imgUrl="/pizza.jpg" text="Contact" />
-            <div className="p-4 sm:p-6">
+          <form className="bg-white shadow-lg w-full rounded-xl">
+            <HeaderDiv imgUrl="/contact.jpg" text="Contact" />
+            <div className="p-4 sm:p-6 space-y-6">
               <div>
                 <label className="block text-paynesGrey font-medium  mb-1">
                   Your Name

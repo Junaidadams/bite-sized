@@ -23,7 +23,7 @@ export const websiteInformation = [
 export const snackItems = [
   {
     key: "mini_pizzas",
-    img: "/pizza2.jpg",
+    img: "/pizza.jpg",
     name: "Mini Pizzas",
     pricing: 120, // R120 per dozen
     quantities: [12, 24, 36],
@@ -32,7 +32,7 @@ export const snackItems = [
   },
   {
     key: "mini_pies",
-    img: "/pizza2.jpg",
+    img: "/pie.jpg",
     name: "Mini Pies",
     pricing: 150, // R150 per dozen
     quantities: [12, 24, 36],
