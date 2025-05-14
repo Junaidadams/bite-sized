@@ -23,11 +23,24 @@ export const websiteInformation = [
 export const snackItems = [
   {
     key: "mini_pizzas",
-    img: "/pizza.jpg",
+    img: "/pizzapi.jpg",
     name: "Mini Pizzas",
     pricing: 120, // R120 per dozen
     quantities: [12, 24, 36],
-    flavours: ["Margherita", "Chicken & Mushroom", "BBQ Beef"],
+    flavours: [
+      {
+        name: "Leafy",
+        ingredients: ["Fresh tomato", "Mushroom", "Herbs"],
+      },
+      {
+        name: "Chicken",
+        ingredients: ["Peri-peri chicken", "Pineapple"],
+      },
+      {
+        name: "Smoky BBQ Peperoni",
+        ingredients: ["BBQ Peperoni"],
+      },
+    ],
     leadTimeDays: 2,
   },
   {
@@ -36,7 +49,20 @@ export const snackItems = [
     name: "Mini Pies",
     pricing: 150, // R150 per dozen
     quantities: [12, 24, 36],
-    flavours: ["Steak & Kidney", "Chicken", "Spinach & Feta"],
+    flavours: [
+      {
+        name: "Steak & Kidney",
+        ingredients: ["Beef Steak", "Kidney", "Gravy", "Pastry"],
+      },
+      {
+        name: "Chicken",
+        ingredients: ["Chicken", "Herbs", "Creamy Sauce", "Pastry"],
+      },
+      {
+        name: "Spinach & Feta",
+        ingredients: ["Spinach", "Feta Cheese", "Herbs", "Pastry"],
+      },
+    ],
     leadTimeDays: 3,
   },
   {
