@@ -18,9 +18,9 @@ const Products = () => {
     removeFromCart(cartItem);
   };
   return (
-    <div className="min-h-screen -mt-[56px] flex flex-col bg-mainBlue">
+    <div className="min-h-screen -mt-[56px] flex flex-col bg-[url(/texture2.png)] bg-repeat [background-size:30%]">
       <div className="mx-auto my-20 min-h-screen w-[95%]">
-        <div className=" mx-auto md:my-10 lg:my-14 xl:my-20 sm:w-3/4 xl:w-2/3 bg-mainWhite p-3 sm:p-4 md:p-5 lg:p-7 xl:p-8 shadow-xl">
+        <div className="border border-mainGreen mx-auto md:my-10 lg:my-14 xl:my-20 sm:w-3/4 xl:w-2/3 bg-mainWhite p-3 sm:p-4 md:p-5 lg:p-7 xl:p-8 shadow-xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-2 lg:gap-4 xl:gap-6">
             {snackItems.map((data) => (
               <ListingTile key={data.key} data={data} />

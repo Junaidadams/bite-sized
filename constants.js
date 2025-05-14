@@ -22,9 +22,9 @@ export const websiteInformation = [
 
 export const snackItems = [
   {
-    key: "mini_pizzas",
+    key: "mini_pizzas_veg",
     img: "/pizzapi.jpg",
-    name: "Mini Pizzas",
+    name: "Mini Pizzas (Veg)",
     pricing: 120, // R120 per dozen
     quantities: [12, 24, 36],
     flavours: [
@@ -32,6 +32,16 @@ export const snackItems = [
         name: "Leafy",
         ingredients: ["Fresh tomato", "Mushroom", "Herbs"],
       },
+    ],
+    leadTimeDays: 2,
+  },
+  {
+    key: "mini_pizzas_meat",
+    img: "/pizza2.jpg",
+    name: "Mini Pizzas (Meat)",
+    pricing: 150, // R150 per dozen
+    quantities: [12, 24, 36],
+    flavours: [
       {
         name: "Chicken",
         ingredients: ["Peri-peri chicken", "Pineapple"],
@@ -41,33 +51,11 @@ export const snackItems = [
         ingredients: ["BBQ Peperoni"],
       },
     ],
-    leadTimeDays: 2,
-  },
-  {
-    key: "mini_pies",
-    img: "/pie.jpg",
-    name: "Mini Pies",
-    pricing: 150, // R150 per dozen
-    quantities: [12, 24, 36],
-    flavours: [
-      {
-        name: "Steak & Kidney",
-        ingredients: ["Beef Steak", "Kidney", "Gravy", "Pastry"],
-      },
-      {
-        name: "Chicken",
-        ingredients: ["Chicken", "Herbs", "Creamy Sauce", "Pastry"],
-      },
-      {
-        name: "Spinach & Feta",
-        ingredients: ["Spinach", "Feta Cheese", "Herbs", "Pastry"],
-      },
-    ],
     leadTimeDays: 3,
   },
   {
-    key: "sausage_rolls",
-    img: "/pizza2.jpg",
+    key: "corndogs",
+    img: "/corndogpi.jpeg",
     name: "Sausage Rolls",
     pricing: 100, // R100 per dozen
     quantities: [12, 24, 36],
