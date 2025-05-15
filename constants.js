@@ -32,6 +32,10 @@ export const snackItems = [
         name: "Leafy",
         ingredients: ["Fresh tomato", "Mushroom", "Herbs"],
       },
+      {
+        name: "Cheesy",
+        ingredients: ["2 Cheeses", "Oregano"],
+      },
     ],
     leadTimeDays: 2,
   },
@@ -56,10 +60,19 @@ export const snackItems = [
   {
     key: "corndogs",
     img: "/corndogpi.jpeg",
-    name: "Sausage Rolls",
+    name: "Corn Dogs",
     pricing: 100, // R100 per dozen
     quantities: [12, 24, 36],
-    flavours: null,
+    flavours: [
+      {
+        name: "Meaty Vienna",
+        ingredients: ["Vienna", "Corndog"],
+      },
+      {
+        name: "Cheesy",
+        ingredients: ["Mozzarella"],
+      },
+    ],
     leadTimeDays: 1,
   },
 ];

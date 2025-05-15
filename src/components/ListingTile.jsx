@@ -28,7 +28,7 @@ const ListingTile = ({ data }) => {
   )?.ingredients;
 
   return (
-    <div className="w-full flex flex-col rounded-t-xl rounded-b-sm bg-white shadow-lg m-auto">
+    <div className="w-full flex flex-col rounded-t-xl rounded-b-sm bg-white shadow-lg m-auto border-mainBlack border">
       <div className="relative h-40">
         <img
           src={data.img}
@@ -98,7 +98,7 @@ const ListingTile = ({ data }) => {
 
         <button
           onClick={handleAddToCart}
-          className="bg-mainOrange text-white px-3 py-2 rounded mt-4 hover:bg-opacity-90 flex items-center justify-center gap-2"
+          className="bg-mainBlack text-white px-3 py-2 rounded mt-4 hover:bg-opacity-90 flex items-center justify-center gap-2"
         >
           <span>Add to Cart</span>
           <BsCartPlus className="my-auto" />

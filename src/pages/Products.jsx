@@ -18,15 +18,15 @@ const Products = () => {
     removeFromCart(cartItem);
   };
   return (
-    <div className="min-h-screen -mt-[56px] flex flex-col bg-[url(/texture1.png)] bg-repeat [background-size:30%]">
-      <div className="mx-auto my-20 min-h-screen w-[95%]">
-        <div className="border border-mainGreen mx-auto md:my-10 lg:my-14 xl:my-20 sm:w-3/4 xl:w-2/3 bg-mainWhite p-3 sm:p-4 md:p-5 lg:p-7 xl:p-8 shadow-xl">
+    <div className="min-h-screen -mt-[56px] flex flex-col bg-[url(/texture1.png)] bg-repeat [background-size:30%] sm:[background-size:25%] md:[background-size:20%] lg:[background-size:15%] xl:[background-size:10%]">
+      <div className="mx-auto my-10 min-h-screen w-[95%]">
+        <div className="border border-mainGreen rounded-xl mx-auto md:my-10 lg:my-14 xl:my-20 sm:w-3/4 xl:w-2/3 bg-white p-3 sm:p-4 md:p-5 lg:p-7 xl:p-8 shadow-xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-2 lg:gap-4 xl:gap-6">
             {snackItems.map((data) => (
               <ListingTile key={data.key} data={data} />
             ))}
           </div>
-          <div className="bg-white text-mainBlack rounded-b-xl shadow-lg p-4 mt-8 ">
+          <div className="bg-white text-mainBlack border-mainBlack border rounded-b-xl shadow-lg p-4 mt-8 ">
             <h1 className=" font-bold text-xl border-b border-black pb-1">
               Cart Summary
             </h1>
