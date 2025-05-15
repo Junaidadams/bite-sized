@@ -26,7 +26,7 @@ const Products = () => {
               <ListingTile key={data.key} data={data} />
             ))}
           </div>
-          <div className="bg-white text-mainBlack border-mainBlack border rounded-b-xl shadow-lg p-4 mt-8 ">
+          <div className="bg-white text-mainBlack border-mainBlack border rounded-xl shadow-lg p-4 mt-8 ">
             <h1 className=" font-bold text-xl border-b border-black pb-1">
               Cart Summary
             </h1>

@@ -28,7 +28,7 @@ const ListingTile = ({ data }) => {
   )?.ingredients;
 
   return (
-    <div className="w-full flex flex-col rounded-t-xl rounded-b-sm bg-white shadow-lg m-auto border-mainBlack border">
+    <div className="w-full flex flex-col rounded-t-xl rounded-b-xl bg-white shadow-lg m-auto border-mainBlack border">
       <div className="relative h-40">
         <img
           src={data.img}
