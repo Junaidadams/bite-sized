@@ -5,6 +5,8 @@ import ListingTile from "../components/ListingTile";
 import { CartContext } from "../context/CartContext";
 import { Link } from "react-router-dom";
 import { CiTrash } from "react-icons/ci";
+import { IoBagCheckOutline } from "react-icons/io5";
+
 
 const Products = () => {
   const { cart, removeFromCart, clearCart } = useContext(CartContext);
@@ -59,9 +61,10 @@ const Products = () => {
 
             <Link
               to="/request-order"
-              className="bg-mainWhite text-mainBlack py-[3px] px-2 font rounded-sm"
+          className="bg-mainBlack w-fit text-white px-3 py-2 rounded mt-4 hover:bg-opacity-90 flex items-center justify-center gap-2"
             >
-              Go to checkout
+               <span>Checkout</span>
+                    <IoBagCheckOutline className="my-auto" />
             </Link>
           </div>
         </div>
