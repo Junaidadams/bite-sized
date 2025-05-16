@@ -60,12 +60,12 @@ const RequestOrder = () => {
                 and reach out to you to organize payment and delivery.
               </p>
               <div className="flex space-x-2">
-                <button
-                  onClick={clearCart}
-                  className="mt-2 bg-red-500 text-white px-2 py-1 rounded"
-                >
-                  Place Order
-                </button>
+           <button
+             className="bg-mainBlack text-white px-3 py-2 rounded mt-4 hover:bg-opacity-90 flex items-center justify-center gap-2"
+           >
+             <span>Add to Cart</span>
+             <BsCartPlus className="my-auto" />
+           </button>
                 <button
                   onClick={clearCart}
                   className="mt-2  text-mainBlack px-2 py-1 border-b-white hover:border-b-black hover:border-b"

@@ -1,5 +1,8 @@
 import HeaderDiv from "../components/HeaderDiv";
 
+import { IoIosSend } from "react-icons/io";
+
+
 const Contact = () => {
   return (
     <div className="min-h-screen -mt-[56px] flex flex-col bg-[url(/texture1.png)] bg-repeat [background-size:30%] sm:[background-size:25%] md:[background-size:20%] lg:[background-size:15%] xl:[background-size:10%]">
@@ -42,12 +45,12 @@ const Contact = () => {
                   className="w-full p-2 border border-gray-300 rounded-sm"
                 />
               </div>
-              <button
-                type="submit"
-                className="bg-mainOrange text-white px-3 py-2 rounded mt-2 hover:bg-opacity-90 flex"
-              >
-                Send Message
-              </button>
+               <button
+                 className="bg-mainBlack text-white px-3 py-2 rounded mt-4 hover:bg-opacity-90 flex items-center justify-center gap-2"
+               >
+                 <span>Add to Cart</span>
+                 <IoIosSend className="my-auto" />
+               </button>
             </div>
           </form>
         </div>
