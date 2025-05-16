@@ -2,6 +2,8 @@ import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import { CiTrash } from "react-icons/ci";
 import HeaderDiv from "../components/HeaderDiv";
+import { BsCartCheckFill } from "react-icons/bs";
+
 
 const RequestOrder = () => {
   const { cart, clearCart, removeFromCart } = useContext(CartContext);
@@ -64,7 +66,7 @@ const RequestOrder = () => {
              className="bg-mainBlack text-white px-3 py-2 rounded mt-4 hover:bg-opacity-90 flex items-center justify-center gap-2"
            >
              <span>Add to Cart</span>
-             <BsCartPlus className="my-auto" />
+             <BsCartCheckFill className="my-auto" />
            </button>
                 <button
                   onClick={clearCart}
