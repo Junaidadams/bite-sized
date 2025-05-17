@@ -42,7 +42,7 @@ const ListingTile = ({ data }) => {
           <p className="text-gray-700">Price: R{data.pricing}</p>
 
           <div className="my-2">
-            <label className="block text-sm">Quantity:</label>
+            <label className="block text-sm font-semibold">Quantity:</label>
             <select
               value={selectedQuantity}
               onChange={(e) => setSelectedQuantity(Number(e.target.value))}
@@ -58,7 +58,7 @@ const ListingTile = ({ data }) => {
 
           {data.flavours ? (
             <div className="my-2">
-              <label className="block text-sm">Flavour:</label>
+              <label className="block text-sm font-semibold">Flavour:</label>
               <select
                 value={selectedFlavour}
                 onChange={(e) => setSelectedFlavour(e.target.value)}
@@ -72,9 +72,9 @@ const ListingTile = ({ data }) => {
               </select>
 
               {selectedFlavourIngredients && (
-                <div className="mt-2 text-sm text-gray-600">
-                  <h4 className="font-semibold">Ingredients:</h4>
-                  <ul className="list-disc list-inside ml-4">
+                <div className="mt-2 text-sm">
+                  <h4 className="font-semibold text-black">Ingredients:</h4>
+                  <ul className="list-disc list-inside ml-2">
                     {selectedFlavourIngredients.map((ingredient, index) => (
                       <li key={index}>{ingredient}</li>
                     ))}

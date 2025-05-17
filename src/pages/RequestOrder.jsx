@@ -4,7 +4,6 @@ import { CiTrash } from "react-icons/ci";
 import HeaderDiv from "../components/HeaderDiv";
 import { BsCartCheckFill } from "react-icons/bs";
 
-
 const RequestOrder = () => {
   const { cart, clearCart, removeFromCart } = useContext(CartContext);
 
@@ -32,13 +31,16 @@ const RequestOrder = () => {
               ) : (
                 <ul className="space-y-3">
                   {cart.map((item, index) => (
-                    <li key={index} className="flex hover:bg-slate-200 p-1">
+                    <li
+                      key={index}
+                      className="flex hover:bg-slate-200 p-1 border-b border-black border-dashed"
+                    >
                       <img
                         alt={item.name}
                         src={item.img}
-                        className="w-7 h-7 sm:w-8 sm:h-8 md:h-10 md:w-10 rounded object-cover my-auto mr-2 md:mr-4"
+                        className="w-7 h-7 sm:w-9 sm:h-9 md:h-10 md:w-10 rounded object-cover my-auto mr-2 md:mr-4"
                       />
-                      <div className="my-auto text-sm md:text-base flex flex-col">
+                      <div className="my-auto text-sm sm:text-base flex flex-col">
                         <span>
                           <span className="font-semibold">{item.name}</span> (
                           {item.quantity}) -{" "}
@@ -57,17 +59,15 @@ const RequestOrder = () => {
                   ))}
                 </ul>
               )}
-              <p className="text-sm my-4">
+              <p className="text-sm sm:text-base my-4">
                 Placing an order will notify us and we will confirm the order
                 and reach out to you to organize payment and delivery.
               </p>
               <div className="flex space-x-2">
-           <button
-             className="bg-mainBlack text-white px-3 py-2 rounded mt-4 hover:bg-opacity-90 flex items-center justify-center gap-2"
-           >
-             <span>Add to Cart</span>
-             <BsCartCheckFill className="my-auto" />
-           </button>
+                <button className="bg-mainBlack text-white px-3 py-2 rounded mt-4 hover:bg-opacity-90 flex items-center justify-center gap-2">
+                  <span>Add to Cart</span>
+                  <BsCartCheckFill className="my-auto" />
+                </button>
                 <button
                   onClick={clearCart}
                   className="mt-2  text-mainBlack px-2 py-1 border-b-white hover:border-b-black hover:border-b"
