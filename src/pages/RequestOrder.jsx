@@ -1,11 +1,17 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CartContext } from "../context/CartContext";
 import { CiTrash } from "react-icons/ci";
 import HeaderDiv from "../components/HeaderDiv";
 import { BsCartCheckFill } from "react-icons/bs";
+import CheckoutForm from "../components/CheckoutForm";
 
 const RequestOrder = () => {
+  const [checkoutMenuOpen, setCheckoutMenuOpen] = useState(false);
   const { cart, clearCart, removeFromCart } = useContext(CartContext);
+
+  const handleClose = () => {
+    setCheckoutMenuOpen(false);
+  };
 
   const handleRemoveFromCart = (item) => {
     const cartItem = {
@@ -31,10 +37,7 @@ const RequestOrder = () => {
               ) : (
                 <ul className="space-y-3">
                   {cart.map((item, index) => (
-                    <li
-                      key={index}
-                      className="flex hover:bg-slate-200 p-1 border-b border-black border-dashed"
-                    >
+                    <li key={index} className="flex hover:bg-slate-200 p-1 ">
                       <img
                         alt={item.name}
                         src={item.img}
@@ -64,8 +67,12 @@ const RequestOrder = () => {
                 and reach out to you to organize payment and delivery.
               </p>
               <div className="flex space-x-2">
-                <button className="bg-mainBlack text-white px-3 py-2 rounded mt-4 hover:bg-opacity-90 flex items-center justify-center gap-2">
-                  <span>Add to Cart</span>
+                <button
+                  disabled={cart.length === 0}
+                  onClick={() => setCheckoutMenuOpen(true)}
+                  className="bg-mainBlack text-white px-3 py-2 rounded mt-4 hover:bg-opacity-90 flex items-center justify-center gap-2"
+                >
+                  <span>Place Order</span>
                   <BsCartCheckFill className="my-auto" />
                 </button>
                 <button
@@ -78,6 +85,13 @@ const RequestOrder = () => {
             </div>
           </div>
         </div>
+        {checkoutMenuOpen && (
+          <CheckoutForm
+            checkoutMenuOpen={checkoutMenuOpen}
+            handleClose={handleClose}
+            cartItems={cart}
+          />
+        )}
       </div>
     </div>
   );
