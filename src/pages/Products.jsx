@@ -7,9 +7,8 @@ import { Link } from "react-router-dom";
 import { CiTrash } from "react-icons/ci";
 import { IoBagCheckOutline } from "react-icons/io5";
 
-
 const Products = () => {
-  const { cart, removeFromCart, clearCart } = useContext(CartContext);
+  const { cart, removeFromCart } = useContext(CartContext);
   const handleRemoveFromCart = (item) => {
     const cartItem = {
       key: item.key,
@@ -61,10 +60,10 @@ const Products = () => {
 
             <Link
               to="/request-order"
-          className="bg-mainBlack w-fit text-white px-3 py-2 rounded mt-4 hover:bg-opacity-90 flex items-center justify-center gap-2"
+              className="bg-mainBlack w-fit text-white px-3 py-2 rounded mt-4 hover:bg-opacity-90 flex items-center justify-center gap-2"
             >
-               <span>Checkout</span>
-                    <IoBagCheckOutline className="my-auto" />
+              <span>Checkout</span>
+              <IoBagCheckOutline className="my-auto" />
             </Link>
           </div>
         </div>
