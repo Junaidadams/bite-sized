@@ -51,7 +51,7 @@ const CheckoutForm = ({ checkoutMenuOpen, handleClose, cartItems }) => {
 
   return (
     <div
-      className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-10"
+      className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-10 shadow-lg"
       onClick={handleClose}
     >
       <div className="relative w-full">
@@ -61,7 +61,7 @@ const CheckoutForm = ({ checkoutMenuOpen, handleClose, cartItems }) => {
         >
           <form
             onSubmit={handleSubmit}
-            className="relative rounded-xl border border-mainBlack bg-white w-full inline-block  overflow-y-auto "
+            className="relative rounded-xl border border-mainBlack bg-white w-full inline-block  overflow-y-auto shadow-xl"
           >
             <HeaderDiv text="Place Order" imgUrl="/pizza.jpg" />
             <div className="p-4 sm:p-6 space-y-2">
@@ -124,7 +124,7 @@ const CheckoutForm = ({ checkoutMenuOpen, handleClose, cartItems }) => {
                     </li>
                   ))}
                 </ul>
-                Total: {cartTotal.toFixed(2)}
+                <p className="font-semibold">Total: R{cartTotal.toFixed(2)}</p>
               </div>
               <button
                 type="submit"

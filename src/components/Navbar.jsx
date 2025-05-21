@@ -68,7 +68,7 @@ const Navbar = () => {
             exit="closed"
             variants={variants}
             transition={{ duration: 0.5 }}
-            className="absolute top-0 left-0 w-full shadow-lg flex flex-col  px-2 pt-2 pb-10 capitalize md:hidden bg-mainWhite"
+            className="absolute top-0 left-0 w-full shadow-lg flex flex-col  px-2 pt-2 pb-10 capitalize md:hidden bg-white"
           >
             <div className="md:hidden ">
               <Toggle isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} />
@@ -83,6 +83,13 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
+            {cart.length > 0 ? (
+              <Link to={"/request-order"} className="flex mx-auto my-2">
+                <CiShoppingCart size={25} /> <p>Cart</p>
+              </Link>
+            ) : (
+              ""
+            )}
           </motion.div>
         )}
       </AnimatePresence>

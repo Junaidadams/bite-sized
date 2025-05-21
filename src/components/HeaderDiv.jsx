@@ -14,7 +14,7 @@ const HeaderDiv = ({ imgUrl, text }) => {
         }`}
         onLoad={() => setLoaded(true)}
       />
-      <p className="absolute bottom-2 left-2 font-bold bg-opacity-60 text-white text-5xl tracking-wider px-2 py-1 rounded ">
+      <p className="absolute bottom-2 left-2 font-bold bg-opacity-60 text-white text-5xl tracking-wider px-2 py-1 rounded">
         {text}
       </p>
     </div>
