@@ -124,7 +124,9 @@ const CheckoutForm = ({ checkoutMenuOpen, handleClose, cartItems }) => {
                     </li>
                   ))}
                 </ul>
-                <p className="font-semibold">Total: R{cartTotal.toFixed(2)}</p>
+                <p className="font-semibold text-lg mt-3">
+                  Total: R{cartTotal.toFixed(2)}
+                </p>
               </div>
               <button
                 type="submit"

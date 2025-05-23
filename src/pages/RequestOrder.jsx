@@ -33,7 +33,7 @@ const RequestOrder = () => {
     <Layout size={2}>
       <div className="bg-white border border-mainBlack shadow-lg rounded-xl">
         <HeaderDiv text="Cart" imgUrl="/order.jpg" />
-        <div className="p-2 sm:p-4 md:p-5">
+        <div className="p-4 sm:p-6">
           {cart.length === 0 ? (
             <p>Your cart is empty.</p>
           ) : (
@@ -64,9 +64,10 @@ const RequestOrder = () => {
               ))}
             </ul>
           )}
-          <p className="text-sm sm:text-base my-4">
-            Placing an order will notify us and we will confirm the order and
-            reach out to you to organize payment and delivery.
+          <p className=" my-4">
+            <span className="font-bold">Please note:</span>
+            <br /> Placing an order will notify us and we will confirm the order
+            and reach out to you to organize payment and delivery.
           </p>
           <p className="font-semibold text-lg">
             Total: R{cartTotal.toFixed(2)}
