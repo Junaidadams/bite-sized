@@ -1,5 +1,4 @@
-import { useContext } from "react";
-import { snackItems } from "../../constants";
+import { useContext, useEffect, useState } from "react";
 import ListingTile from "../components/ListingTile";
 
 import { CartContext } from "../context/CartContext";
@@ -7,8 +6,11 @@ import { Link } from "react-router-dom";
 import { CiTrash } from "react-icons/ci";
 import { IoBagCheckOutline } from "react-icons/io5";
 import Layout from "../components/Layout";
+import { client } from "../../sanity";
 
 const Products = () => {
+  const [snackItems, setSnackItems] = useState([]);
+
   const { cart, removeFromCart } = useContext(CartContext);
   const handleRemoveFromCart = (item) => {
     const cartItem = {
@@ -19,6 +21,26 @@ const Products = () => {
     };
     removeFromCart(cartItem);
   };
+
+  useEffect(() => {
+    client
+      .fetch(
+        `*[_type == "snackItem"]{
+        _id,
+        key,
+        name,
+        "img": img.asset->url,
+        pricing,
+        quantities,
+        flavours,
+        leadTimeDays
+      }`
+      )
+      .then((data) => setSnackItems(data))
+      .catch(console.error);
+    console.log(snackItems);
+  }, []);
+
   return (
     <Layout size={1}>
       <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-2 lg:gap-4 xl:gap-6">

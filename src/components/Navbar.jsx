@@ -37,27 +37,34 @@ const Navbar = () => {
       <div className="md:hidden ml-2">
         <Toggle isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} />
       </div>
-
-      <ul className="space-x-8 capitalize px-8 rounded-bl md:flex hidden flex-row ml-auto mb-auto text-mainWhite backdrop-blur bg-mainBlack bg-opacity-90 pb-3 pt-3">
-        {navigationLinks.map((link) => (
-          <li key={link.key} className="">
-            <a
-              href={link.link}
-              className="text-space-cadet py-2 px-1 rounded-full hover:text-gray-300"
-            >
-              {link.name}
-            </a>
-          </li>
-        ))}
-        {cart.length > 0 ? (
-          <Link to={"/request-order"} className="flex my-auto">
-            <p>{cart.length}</p>
-            <CiShoppingCart size={25} />
-          </Link>
-        ) : (
-          ""
-        )}
-      </ul>
+      <div className="flex w-full backdrop-blur bg-mainBlack bg-opacity-90">
+        <a
+          href="/"
+          className="space-x-8 capitalize px-8 rounded-br md:flex hidden flex-row mr-auto mb-auto text-mainWhite "
+        >
+          <img src="/logowhite.png" className="h-14 p-2" />
+        </a>
+        <ul className="space-x-8 capitalize px-8 rounded-bl md:flex hidden flex-row ml-auto mb-auto text-mainWhite pb-3 pt-3">
+          {navigationLinks.map((link) => (
+            <li key={link.key} className="">
+              <a
+                href={link.link}
+                className="text-space-cadet py-2 px-1 rounded-full hover:text-gray-300"
+              >
+                {link.name}
+              </a>
+            </li>
+          ))}
+          {cart.length > 0 ? (
+            <Link to={"/request-order"} className="flex my-auto">
+              <p>{cart.length}</p>
+              <CiShoppingCart size={25} />
+            </Link>
+          ) : (
+            ""
+          )}
+        </ul>
+      </div>
 
       {/* Mobile Menu */}
       <AnimatePresence>
