@@ -1,13 +1,16 @@
-import { navigationLinks, websiteInformation } from "../../constants";
-
-// Destructure the first item from websiteInformation
-const { socials } = websiteInformation[0];
+import { navigationLinks } from "../../constants";
 
 const Footer = () => {
   return (
     <div className="bg-mainBlack text-mainWhite capitalize flex flex-col">
       <div className="flex flex-col lg:flex-row my-16 mx-auto  space-y-6 lg:space-x-12 lg:space-y-0">
-        <div className="flex space-x-4">
+        <a
+          href="/"
+          className=" capitalize px-8 rounded-br md:flex  flex-row text-mainWhite "
+        >
+          <img src="/logowhite.png" className="h-14 p-2 my-auto" />
+        </a>
+        <div className="flex mx-auto space-x-4">
           <ul className="">
             {navigationLinks.map((link) => (
               <li key={link.key}>
@@ -15,7 +18,7 @@ const Footer = () => {
               </li>
             ))}
           </ul>
-          <ul className="">
+          {/* <ul className="">
             {socials.map(({ key, name, link, logo: Logo }) => (
               <li key={key}>
                 <a href={link} className="flex space-x-2 ">
@@ -24,7 +27,7 @@ const Footer = () => {
                 </a>
               </li>
             ))}
-          </ul>
+          </ul> */}
         </div>
       </div>
       <p className="mx-auto text-slate-300 text-sm font-light pb-4">

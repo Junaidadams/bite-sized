@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import ListingTile from "../components/ListingTile";
+import ListingTileSkeleton from "../components/skeleton/ListingTileSkeleton";
 
 import { CartContext } from "../context/CartContext";
 import { Link } from "react-router-dom";
@@ -9,6 +10,7 @@ import Layout from "../components/Layout";
 import { client } from "../../sanity";
 
 const Products = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const [snackItems, setSnackItems] = useState([]);
 
   const { cart, removeFromCart } = useContext(CartContext);
@@ -36,18 +38,25 @@ const Products = () => {
         leadTimeDays
       }`
       )
-      .then((data) => setSnackItems(data))
+      .then((data) => {
+        setSnackItems(data);
+        setIsLoading(false);
+      })
       .catch(console.error);
-    console.log(snackItems);
   }, []);
 
   return (
     <Layout size={1}>
       <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-2 lg:gap-4 xl:gap-6">
-        {snackItems.map((data) => (
-          <ListingTile key={data.key} data={data} />
-        ))}
+        {isLoading
+          ? Array(6)
+              .fill(0)
+              .map((_, i) => <ListingTileSkeleton key={i} />)
+          : snackItems.map((data) => (
+              <ListingTile key={data.key} data={data} />
+            ))}
       </div>
+
       <div className="bg-white text-mainBlack border-mainBlack border rounded-xl shadow-lg p-4 mt-8 ">
         <h1 className=" font-bold text-xl border-b border-black pb-1">
           Cart Summary
