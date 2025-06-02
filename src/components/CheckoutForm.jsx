@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import HeaderDiv from "./HeaderDiv";
+import axios from "axios";
 
 const CheckoutForm = ({ checkoutMenuOpen, handleClose, cartItems }) => {
   const [formData, setFormData] = useState({
@@ -8,6 +9,7 @@ const CheckoutForm = ({ checkoutMenuOpen, handleClose, cartItems }) => {
     email: "",
   });
   const [saveInfo, setSaveInfo] = useState(false); // checkbox state
+  const [status, setStatus] = useState(null);
 
   useEffect(() => {
     const saved = localStorage.getItem("checkoutInfo");
@@ -22,22 +24,27 @@ const CheckoutForm = ({ checkoutMenuOpen, handleClose, cartItems }) => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
     if (saveInfo) {
       localStorage.setItem("checkoutInfo", JSON.stringify(formData));
     } else {
       localStorage.removeItem("checkoutInfo");
     }
-
     const orderDetails = {
       ...formData,
       cartItems,
     };
-
-    // TODO: send `orderDetails` to your mail server or API
-
+    try {
+      const response = await axios.post("mail-server", orderDetails);
+      setStatus({ success: true, message: "Order submitted!" });
+    } catch (error) {
+      setStatus({
+        success: false,
+        message: "Something went wrong. Please try again later.",
+      });
+      console.log(error);
+    }
     alert("Order submitted!");
     handleClose();
   };
@@ -128,12 +135,18 @@ const CheckoutForm = ({ checkoutMenuOpen, handleClose, cartItems }) => {
                   Total: R{cartTotal.toFixed(2)}
                 </p>
               </div>
-              <button
-                type="submit"
-                className="bg-mainBlack text-white px-3 py-2 rounded mt-4 hover:bg-opacity-90 flex items-center justify-center gap-2"
-              >
-                Submit Order
-              </button>
+              <div className="flex flex-row justify-between">
+                <button
+                  onSubmit={handleSubmit}
+                  type="submit"
+                  className="bg-mainBlack text-white px-3 py-2 rounded mt-4 hover:bg-opacity-90 flex items-center justify-center gap-2"
+                >
+                  Submit Order
+                </button>
+                <button className="bg-mainBlack text-white px-3 py-2 rounded mt-4 hover:bg-opacity-90 flex items-center justify-center gap-2">
+                  Close
+                </button>
+              </div>
             </div>
           </form>
         </div>

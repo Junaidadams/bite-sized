@@ -2,15 +2,27 @@ import PropTypes from "prop-types";
 import { useContext, useState } from "react";
 import { CartContext } from "../context/CartContext";
 import { BsCartPlus } from "react-icons/bs";
+import { AnimatePresence, motion } from "framer-motion";
 
 const ListingTile = ({ data }) => {
-  const { addToCart } = useContext(CartContext);
+  const { addToCart, cart } = useContext(CartContext);
+  const [error, setError] = useState(null);
   const [selectedQuantity, setSelectedQuantity] = useState(data.quantities[0]);
   const [selectedFlavour, setSelectedFlavour] = useState(
     data.flavours ? data.flavours[0].name : null
   );
 
   const handleAddToCart = () => {
+    const isDuplicate = cart.some(
+      (item) => item.key === data.key && item.flavour === selectedFlavour
+    );
+
+    if (isDuplicate) {
+      setError("Item already in cart with the selected flavour.");
+      setTimeout(() => setError(null), 3000); // Auto-clear after 3s
+      return;
+    }
+
     const cartItem = {
       key: data.key,
       img: data.img,
@@ -19,6 +31,7 @@ const ListingTile = ({ data }) => {
       quantity: selectedQuantity,
       flavour: selectedFlavour,
     };
+
     addToCart(cartItem);
   };
 
@@ -95,6 +108,18 @@ const ListingTile = ({ data }) => {
             </div>
           )}
         </div>
+        <AnimatePresence>
+          {error && (
+            <motion.div
+              className="text-red-600 text-sm mt-2"
+              initial={{ opacity: 0, y: -5 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -5 }}
+            >
+              {error}
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         <button
           onClick={handleAddToCart}
