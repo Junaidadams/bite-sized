@@ -36,8 +36,12 @@ const CheckoutForm = ({ checkoutMenuOpen, handleClose, cartItems }) => {
       cartItems,
     };
     try {
-      const response = await axios.post("mail-server", orderDetails);
+      const response = await axios.post(
+        "https://mail-server-6sjb.onrender.com/api/mail/bitesized-order-request",
+        orderDetails
+      );
       setStatus({ success: true, message: "Order submitted!" });
+      alert("Order submitted!");
     } catch (error) {
       setStatus({
         success: false,
@@ -45,7 +49,7 @@ const CheckoutForm = ({ checkoutMenuOpen, handleClose, cartItems }) => {
       });
       console.log(error);
     }
-    alert("Order submitted!");
+
     handleClose();
   };
 
